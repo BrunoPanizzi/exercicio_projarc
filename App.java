@@ -1,8 +1,8 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        Codificador cod1 = new CodificadorFactory().getCodificador("1");
-        Codificador cod2 = new CodificadorFactory().getCodificador("2");
-        Codificador cod3 = new CodificadorFactory().getCodificador("3");
+        Codificador cod1 =  CodificadorFactory.getInstance().getCodificador("1");
+        Codificador cod2 =  CodificadorFactory.getInstance().getCodificador("2");
+        Codificador cod3 =  CodificadorFactory.getInstance().getCodificador("3");
 
         for(int i = 0; i < 3; i++) {
             Codificador cod = null;

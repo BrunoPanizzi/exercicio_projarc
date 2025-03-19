@@ -1,5 +1,17 @@
 public class CodificadorFactory {
-    public static Codificador getCodificador(String tipo) {
+    private static CodificadorFactory instance;
+
+    private CodificadorFactory() {
+    }
+
+    public static CodificadorFactory getInstance() {
+        if (instance == null) {
+            instance = new CodificadorFactory();
+        }
+        return instance;
+    }
+
+    static synchronized public Codificador getCodificador(String tipo) {
         if (tipo.equals("1")) {
             return new CodificadorSimples();
         } else if (tipo.equals("2")) {
@@ -9,5 +21,9 @@ public class CodificadorFactory {
         } else {
             return null;
         }
+    }
+
+    public Object clone() throws CloneNotSupportedException {
+        throw new CloneNotSupportedException();
     }
 }

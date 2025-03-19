@@ -11,7 +11,7 @@ public class CodificadorFactory {
         return instance;
     }
 
-    static synchronized public Codificador getCodificador(String tipo) {
+    synchronized public Codificador getCodificador(String tipo) {
         if (tipo.equals("1")) {
             return new CodificadorSimples();
         } else if (tipo.equals("2")) {
